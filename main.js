@@ -18,14 +18,15 @@ function generate(){
 
 
 
-function checkSpecialChar() {
-    if(/^(?=.*[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~])(?=.*[0-9])/.test(inputEl.value)){
+function checkSpecialChar(val) {
+    if(/^(?=.*[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~])(?=.*[0-9])/.test(val)){
     }
     else {
         let value = inputEl.value;
         let specialCharacterAdd = "$";
+        let specialNumAdd ="3";
         let position = Math.random() * value.length;
-        inputEl.value = value.substring(0, position-1) + specialCharacterAdd + value.substring(position);
+        inputEl.value = value.substring(0, position-1) + specialCharacterAdd + specialNumAdd + value.substring(position);
     }
     
 }
