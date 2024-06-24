@@ -6,8 +6,7 @@ const genEl = document.getElementById("generate-el")
 const inputEl = document.getElementById("input-el")
 genEl.addEventListener("click", generate);
 let pass = [];
-
-
+let changeText = document.getElementById("change-text")
 
 function generate(){
     for(let i=0; i<10 && i<chars.length; i++){
@@ -16,8 +15,6 @@ function generate(){
         inputEl.value = pass.join('');
         checkSpecialChar(inputEl.value);
 };
-
-
 
 function checkSpecialChar(val) {
     if(/^(?=.*[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~])(?=.*[0-9])/.test(val)){
@@ -30,4 +27,23 @@ function checkSpecialChar(val) {
         inputEl.value = value.substring(0, position-1) + specialCharacterAdd + specialNumAdd + value.substring(position);
     }
     
+
+inputEl.onclick = function() {
+  document.execCommand("copy");
+}
+
+
+
+inputEl.addEventListener("copy", function(event) {
+  event.preventDefault();
+  if (event.clipboardData) {
+    event.clipboardData.setData("text/plain", inputEl.value);
+
+  }
+});
+
+inputEl.addEventListener("click", function(){
+    changeText.textContent = "Copied to Clipboard!";
+})
+
 }
