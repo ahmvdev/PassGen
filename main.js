@@ -14,6 +14,9 @@ function generate(){
     };
         inputEl.value = pass.join('');
         checkSpecialChar(inputEl.value);
+        inputEl.addEventListener("click", function(){
+        changeText.textContent = "Copied to Clipboard!";
+      })
 };
 
 function checkSpecialChar(val) {
@@ -42,8 +45,6 @@ inputEl.addEventListener("copy", function(event) {
   }
 });
 
-inputEl.addEventListener("click", function(){
-    changeText.textContent = "Copied to Clipboard!";
-})
+
 
 }

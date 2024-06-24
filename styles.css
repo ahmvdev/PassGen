@@ -60,4 +60,9 @@ h3{
 p{
     font-family: Inter;
     color: darkgray;
+    font-size: 12px;
+}
+
+.txt-container{
+    text-align: left;
 }
