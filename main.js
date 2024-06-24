@@ -20,15 +20,12 @@ function generate(){
 
 function checkSpecialChar() {
     if(/^(?=.*[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~])(?=.*[0-9])/.test(inputEl.value)){
-        console.log("value already there")
     }
     else {
         let value = inputEl.value;
         let specialCharacterAdd = "$";
         let position = Math.random() * value.length;
         inputEl.value = value.substring(0, position-1) + specialCharacterAdd + value.substring(position);
-        console.log("value added!")
     }
     
 }
-//
